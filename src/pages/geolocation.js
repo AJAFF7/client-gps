@@ -11,7 +11,7 @@ function Geolocations() {
     const fetchData = async () => {
       try {
         // Fetch geolocation data from the server
-        const response = await axios.get("/api/geolocation");
+        const response = await axios.get("http://localhost:7272/api/geolocation");
         
         // Play a notification sound when new data is received
         if (response.data.length > geolocationData.length) {
