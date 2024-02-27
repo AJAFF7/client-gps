@@ -18,17 +18,17 @@ const News = () => {
   const [news, setNews] = useState([]);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!localStorage.getItem('userID')) {
-  //     navigate('/Login_auth');
-  //   }
-  // }, [navigate]);
-
-   useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      navigate("/home"); // Redirect to home if token is not present
+  useEffect(() => {
+    if (!localStorage.getItem('userID')) {
+      navigate('/Login_auth');
     }
   }, [navigate]);
+
+  //  useEffect(() => {
+  //   if (!localStorage.getItem("token")) {
+  //     navigate("/home"); // Redirect to home if token is not present
+  //   }
+  // }, [navigate]);
 
   useEffect(() => {
     const fetchNews = async () => {
