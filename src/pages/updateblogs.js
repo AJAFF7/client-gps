@@ -254,7 +254,7 @@ const BlogList = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('/api/blogs');
+        const response = await axios.get('http://localhost:7272/api/blogs');
         if (!response.data) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -300,7 +300,7 @@ const BlogList = () => {
   const handleSave = async (postId) => {
     try {
       const modifiedPost = modifiedPosts.find((post) => post._id === postId);
-      const response = await axios.patch(`/api/blogs/${postId}`, modifiedPost);
+      const response = await axios.patch(`http://localhost:7272/api/blogs/${postId}`, modifiedPost);
 
       if (!response.data) {
         throw new Error('No data received from the server');
@@ -325,7 +325,7 @@ const BlogList = () => {
     try {
       console.log('Deleting post with ID:', postId);
 
-      const response = await axios.delete(`/api/blogs/${postId}`);
+      const response = await axios.delete(`http://localhost:7272/api/blogs/${postId}`);
 
       if (!response.data || response.data.status !== 'success') {
         throw new Error('Failed to delete post');
