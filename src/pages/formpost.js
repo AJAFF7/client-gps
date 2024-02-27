@@ -403,7 +403,7 @@ const FormPost = () => {
     try {
       // Add a new post to the API
       const response = await axios.post(
-        "/api/blogs",
+        "https://hama.ajaf.my.id/api/blogs",
         newPost,
       );
       console.log("Post added successfully:", response.data);
