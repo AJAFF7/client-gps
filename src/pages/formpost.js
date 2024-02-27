@@ -432,17 +432,17 @@ const FormPost = () => {
     navigate("/Login_auth");
   };
   
-   const handleLogout = async () => {
-    try {
-      const response = await axios.post("https://hama.ajaf.my.id/api/logout");
-      console.log(response.data); // Optional: log the response
-      // Handle successful logout, e.g., redirect to login page
-    } catch (error) {
-      console.error("Logout failed:", error);
-      // Handle logout failure
-    }
-    navigate("/Login_auth");
-  };
+  //  const handleLogout = async () => {
+  //   try {
+  //     const response = await axios.post("https://hama.ajaf.my.id/api/logout");
+  //     console.log(response.data); // Optional: log the response
+  //     // Handle successful logout, e.g., redirect to login page
+  //   } catch (error) {
+  //     console.error("Logout failed:", error);
+  //     // Handle logout failure
+  //   }
+  //   navigate("/Login_auth");
+  // };
 
   useEffect(() => {
     if (!localStorage.getItem("userID")) {
