@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://localhost:7272",
+  "proxy": "https://hama.ajaf.my.id",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
