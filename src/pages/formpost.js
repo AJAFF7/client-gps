@@ -420,26 +420,14 @@ const FormPost = () => {
     }
   };
 
-  const Logout = async () => {
-    window.localStorage.removeItem("userID");
-    try {
-      await axios.post("https://hama.ajaf.my.id/api/logout");
-      Clear token from local storage
-      localStorage.removeItem("token"); 
-    } catch (error) {
-      console.error("Error logging out:", error);
-    }
-    navigate("/Login_auth");
-  };
-  
-  //  const handleLogout = async () => {
+  // const Logout = async () => {
+  //   window.localStorage.removeItem("userID");
   //   try {
-  //     const response = await axios.post("https://hama.ajaf.my.id/api/logout");
-  //     console.log(response.data); // Optional: log the response
-  //     // Handle successful logout, e.g., redirect to login page
+  //     await axios.post("https://hama.ajaf.my.id/api/logout");
+  //     Clear token from local storage
+  //     localStorage.removeItem("token"); 
   //   } catch (error) {
-  //     console.error("Logout failed:", error);
-  //     // Handle logout failure
+  //     console.error("Error logging out:", error);
   //   }
   //   navigate("/Login_auth");
   // };
@@ -449,6 +437,21 @@ const FormPost = () => {
       navigate("/Login_auth");
     }
   }, [navigate]);
+
+  
+   const handleLogout = async () => {
+    try {
+      const response = await axios.post("https://hama.ajaf.my.id/api/logout");
+      console.log(response.data); // Optional: log the response
+      // Handle successful logout, e.g., redirect to login page
+    } catch (error) {
+      console.error("Logout failed:", error);
+      // Handle logout failure
+    }
+    navigate("/Login_auth");
+  };
+
+
 
   // useEffect(() => {
   //   if (!localStorage.getItem("token")) {
