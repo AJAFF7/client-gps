@@ -75,7 +75,7 @@ const navigate = useNavigate();
     event.preventDefault();
 
     try {
-      const result = await axios.post("/api/auth-login", {
+      const result = await axios.post("http://localhost:7272/api/auth-login", {
         username,
         password,
       });
