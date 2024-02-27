@@ -420,17 +420,17 @@ const FormPost = () => {
     }
   };
 
-  //const Logout = async () => {
-    //window.localStorage.removeItem("userID");
-    //try {
-      //await axios.post("http://localhost:7070/api/logout");
-      // Clear token from local storage
-      //localStorage.removeItem("token"); 
-    //} catch (error) {
-      //console.error("Error logging out:", error);
-    //}
-    //navigate("/Login_auth");
-  //};
+  const Logout = async () => {
+    window.localStorage.removeItem("userID");
+    try {
+      await axios.post("https://hama.ajaf.my.id/api/logout");
+      Clear token from local storage
+      localStorage.removeItem("token"); 
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+    navigate("/Login_auth");
+  };
   
    const handleLogout = async () => {
     try {
