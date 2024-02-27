@@ -22,7 +22,7 @@ const BlogList = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('/api/blogs'); // https://server-kthc.onrender.com/api/blogs
+        const response = await fetch('http://localhost:7272/api/blogs'); // https://server-kthc.onrender.com/api/blogs
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -41,7 +41,7 @@ const BlogList = () => {
 
   const handleLike = async (postId) => {
     try {
-      const response = await fetch(`/api/blogs/${postId}/like`, {
+      const response = await fetch(`http://localhost:7272/api/blogs/${postId}/like`, {
         method: 'POST',
       });
       if (!response.ok) {
